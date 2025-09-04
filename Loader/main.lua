@@ -1,5 +1,5 @@
 -- MOUNT DAUN
--- By ChatGPT x GosHe
+-- WataX Script
 
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
