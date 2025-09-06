@@ -1,5 +1,4 @@
 -- MOUNT DAUN
--- By ChatGPT x GosHe
 
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
@@ -7,7 +6,7 @@ local hrp = player.Character and player.Character:WaitForChild("HumanoidRootPart
 
 local delayTime = 0.04
 
--- Respawn handler
+
 player.CharacterAdded:Connect(function(char)
     hrp = char:WaitForChild("HumanoidRootPart")
 end)
@@ -25240,8 +25239,7 @@ local CP0toPuncak_str = [[
 {X=-3298.24,Y=1732.34,Z=-2574.50}
 ]]
 
--- =========================
--- Parser string → table Vector3
+
 local function parseRoute(str)
     local t = {}
     for x,y,z in str:gmatch("X=([%-%d%.]+),Y=([%-%d%.]+),Z=([%-%d%.]+)") do
@@ -25257,8 +25255,7 @@ local CP3to4 = parseRoute(CP3to4_str)
 local CP4toPuncak = parseRoute(CP4toPuncak_str)
 local CP0toPuncak = parseRoute(CP0toPuncak_str)
 
--- =========================
--- Fungsi jalanin teleport
+
 local function runRoute(route)
     spawn(function()
         for _,point in ipairs(route) do
@@ -25270,8 +25267,7 @@ local function runRoute(route)
     end)
 end
 
--- =========================
--- GUI
+
 local screenGui = Instance.new("ScreenGui",player:WaitForChild("PlayerGui"))
 screenGui.ResetOnSpawn = false
 
@@ -25290,7 +25286,7 @@ title.TextColor3 = Color3.fromRGB(255,255,255)
 title.Font = Enum.Font.SourceSansBold
 title.TextScaled = true
 
--- Tombol close
+
 local closeBtn = Instance.new("TextButton",frame)
 closeBtn.Size = UDim2.new(0,30,0,30)
 closeBtn.Position = UDim2.new(0,0,0,0)
@@ -25301,7 +25297,7 @@ closeBtn.MouseButton1Click:Connect(function()
     screenGui:Destroy()
 end)
 
--- Tombol minimize
+
 local miniBtn = Instance.new("TextButton",frame)
 miniBtn.Size = UDim2.new(0,30,0,30)
 miniBtn.Position = UDim2.new(1,-30,0,0)
@@ -25330,8 +25326,7 @@ bubbleBtn.MouseButton1Click:Connect(function()
     bubbleBtn.Visible = false
 end)
 
--- =========================
--- Tombol teleport
+
 local routes = {
     {"CP 0 -> CP 1", CP0to1},
     {"CP 1 -> CP 2", CP1to2},
@@ -25355,8 +25350,6 @@ for _,data in ipairs(routes) do
     y = y + 35
 end
 
--- =========================
--- Discord Section (relative to last button)
 local discordLabel = Instance.new("TextLabel", frame)
 discordLabel.Size = UDim2.new(1, -20, 0, 20)
 discordLabel.Position = UDim2.new(0, 10, 0, y + 10)
@@ -25372,7 +25365,7 @@ discordBtn.Position = UDim2.new(0.5, -70, 0, y + 35)
 discordBtn.Text = "Join Discord"
 discordBtn.TextScaled = true
 discordBtn.Font = Enum.Font.SourceSansBold
-discordBtn.TextColor3 = Color3.fromRGB(255,255,255) -- solid white text
+discordBtn.TextColor3 = Color3.fromRGB(255,255,255) 
 discordBtn.BackgroundColor3 = Color3.fromRGB(0, 120, 200)
 
 local uicorner = Instance.new("UICorner", discordBtn)
@@ -25380,9 +25373,9 @@ uicorner.CornerRadius = UDim.new(0.3, 0)
 
 discordBtn.MouseButton1Click:Connect(function()
     if syn and syn.open_url then
-        syn.open_url("https://discord.gg/yourinvite")
+        syn.open_url("https://discord.gg/tfNqRQsqHK")
     elseif setclipboard then
-        setclipboard("https://discord.gg/yourinvite")
+        setclipboard("https://discord.gg/tfNqRQsqHK")
         game.StarterGui:SetCore("SendNotification", {
             Title = "Discord",
             Text = "Link Discord copied to clipboard!",
@@ -25391,5 +25384,5 @@ discordBtn.MouseButton1Click:Connect(function()
     end
 end)
 
--- Resize frame dynamically to fit content
+
 frame.Size = UDim2.new(0, 250, 0, y + 90)
