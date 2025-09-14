@@ -4,7 +4,7 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local hrp = player.Character and player.Character:WaitForChild("HumanoidRootPart")
 
-local delayTime = 0.04
+local delayTime = 0.02
 
 
 player.CharacterAdded:Connect(function(char)
@@ -25280,7 +25280,7 @@ frame.Draggable = true
 
 local title = Instance.new("TextLabel",frame)
 title.Size = UDim2.new(1,0,0,30)
-title.Text = "⚡ WataX Menu"
+title.Text = "⚡ SkydiveHub Menu"
 title.BackgroundColor3 = Color3.fromRGB(60,60,60)
 title.TextColor3 = Color3.fromRGB(255,255,255)
 title.Font = Enum.Font.SourceSansBold
@@ -25308,7 +25308,7 @@ miniBtn.TextColor3 = Color3.fromRGB(255,255,255)
 local bubbleBtn = Instance.new("TextButton",screenGui)
 bubbleBtn.Size = UDim2.new(0,50,0,50)
 bubbleBtn.Position = UDim2.new(0,20,0.7,0)
-bubbleBtn.Text = "⚡WataX"
+bubbleBtn.Text = "Skydive Hub 👅"
 bubbleBtn.BackgroundColor3 = Color3.fromRGB(0,120,200)
 bubbleBtn.TextColor3 = Color3.fromRGB(255,255,255)
 bubbleBtn.Font = Enum.Font.SourceSansBold
