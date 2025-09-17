@@ -4,7 +4,7 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local hrp = player.Character and player.Character:WaitForChild("HumanoidRootPart")
 
-local delayTime = 0.10
+local delayTime = 0.04
 
 
 player.CharacterAdded:Connect(function(char)
